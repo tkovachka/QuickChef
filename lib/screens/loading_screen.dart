@@ -1,0 +1,1 @@
+//todo something fun for loading maybe show cooking jokes while ai is analyzing
