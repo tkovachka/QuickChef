@@ -9,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: CustomColor.cream,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -31,14 +32,14 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 30),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/favorites');
+                  Navigator.pushNamed(context, '/favourites');
                 },
                 child: const NormalText(text: "My Favorites", color: CustomColor.darkOrange),
               ),
               const SizedBox(height: 10),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/recipes');
+                  Navigator.pushNamed(context, '/recent');
                 },
                 child: const NormalText(text: "Recent Recipes", color: CustomColor.darkOrange),
               ),

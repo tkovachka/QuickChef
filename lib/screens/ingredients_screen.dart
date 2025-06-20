@@ -1,3 +1,4 @@
+import 'package:QuickChef/services/recipe_storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:QuickChef/models/ingredient.dart';
 import 'package:QuickChef/screens/loading_screen.dart';
@@ -34,6 +35,7 @@ class _IngredientsScreenState extends State<IngredientsScreen> {
     );
 
     final recipes = await RecipeService().getRecipesFromIngredients(ingredients);
+    await RecipeStorageService().saveRecentRecipes(recipes);
 
     if (!context.mounted) return;
     Navigator.popAndPushNamed(context, '/recipes', arguments: {

@@ -1,3 +1,5 @@
+import 'package:QuickChef/screens/favourites_screen.dart';
+import 'package:QuickChef/screens/recent_recipes_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:QuickChef/screens/loading_screen.dart';
 import 'package:QuickChef/ui/custom_colors.dart';
@@ -30,8 +32,8 @@ class MyApp extends StatelessWidget {
         '/ingredients': (_) => const IngredientsScreen(),
         '/recipes': (_) => const RecipesScreen(),
         '/recipe_details': (_) => const RecipeDetailsScreen(),
-        '/favourites': (_) => const Placeholder(), // todo change to faves
-        '/recent': (_) => const Placeholder(), // todo change to recent
+        '/favourites': (_) => const MyFavouritesScreen(),
+        '/recent': (_) => const RecentRecipesScreen(),
       },
     );
   }

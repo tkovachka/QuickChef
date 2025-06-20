@@ -1,10 +1,40 @@
+import 'package:QuickChef/services/recipe_storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:QuickChef/ui/custom_colors.dart';
 import 'package:QuickChef/ui/custom_text.dart';
 import '../models/recipe.dart';
 
-class RecipeDetailsScreen extends StatelessWidget {
+class RecipeDetailsScreen extends StatefulWidget {
   const RecipeDetailsScreen({super.key});
+
+  @override
+  State<RecipeDetailsScreen> createState() => _RecipeDetailsScreenState();
+}
+
+class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
+  late Recipe recipe;
+  bool isFav = false;
+  final storageService = RecipeStorageService();
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    recipe = ModalRoute.of(context)!.settings.arguments as Recipe;
+    _loadFavourite();
+  }
+
+  Future<void> _loadFavourite() async {
+    final fav = await storageService.isFavourite(recipe);
+    if (mounted) {
+      setState(() => isFav = fav);
+    }
+  }
+
+  Future<void> _toggleFavourite() async {
+    setState(() => isFav = !isFav);
+    await storageService.toggleFavourite(recipe);
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,20 +60,21 @@ class RecipeDetailsScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              NormalText(
-                text: '${recipe.timeToMake} min',
-                color: CustomColor.orange,
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: IconButton(
-                  icon: const Icon(Icons.favorite_border,
-                      color: CustomColor.darkOrange),
-                  // dark orange
-                  onPressed: () {
-                    // TODO: implement favourites logic and state management
-                  },
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  NormalText(
+                    text: '${recipe.timeToMake} min',
+                    color: CustomColor.orange,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      isFav ? Icons.favorite : Icons.favorite_border,
+                      color: CustomColor.darkOrange,
+                    ),
+                    onPressed: _toggleFavourite,
+                  ),
+                ],
               ),
               const SizedBox(height: 8.0),
               const NormalText(

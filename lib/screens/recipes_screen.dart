@@ -25,9 +25,7 @@ class RecipesScreen extends StatelessWidget {
             child: ListView(
               children: recipes
                   .map((r) => RecipeCard(
-                        title: r.title,
-                        imageUrl: r.imageUrl,
-                        timeToMake: r.timeToMake,
+                        recipe: r,
                         onTap: () => Navigator.pushNamed(
                           context,
                           '/recipe_details',
