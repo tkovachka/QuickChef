@@ -1,3 +1,4 @@
+import 'package:QuickChef/ui/custom_navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:QuickChef/ui/custom_colors.dart';
 import 'package:QuickChef/ui/custom_text.dart';
@@ -37,6 +38,7 @@ class RecipesScreen extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: const CustomNavBar(currentRoute: '/recent'),
     );
   }
 }
