@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:proekt/ui/custom_button.dart';
-import 'package:proekt/ui/custom_colors.dart';
-import 'package:proekt/ui/custom_text.dart';
+import 'package:QuickChef/ui/custom_button.dart';
+import 'package:QuickChef/ui/custom_colors.dart';
+import 'package:QuickChef/ui/custom_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,8 +15,11 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              //todo add logo here
-              const SizedBox(height: 20),
+              Image.asset(
+                'assets/images/logo.png',
+                width: 110,
+                fit: BoxFit.contain,
+              ),
               const NormalText(text: "QuickChef", size: 20, color:CustomColor.darkOrange),
               const SizedBox(height: 40),
               const TitleText(text: "What's cooking today?"),

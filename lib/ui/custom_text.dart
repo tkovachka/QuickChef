@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/cupertino.dart';
-import 'package:proekt/ui/custom_colors.dart';
+import 'package:QuickChef/ui/custom_colors.dart';
 
 class TitleText extends StatelessWidget{
   final String text;

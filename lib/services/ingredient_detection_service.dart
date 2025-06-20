@@ -1,4 +1,4 @@
-import 'package:proekt/models/ingredient.dart';
+import 'package:QuickChef/models/ingredient.dart';
 
 class IngredientDetectionService {
   Future<List<Ingredient>> detectIngredients(String imagePath) async {

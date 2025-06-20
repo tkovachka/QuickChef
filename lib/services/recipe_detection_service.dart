@@ -1,5 +1,5 @@
-import 'package:proekt/models/recipe.dart';
-import 'package:proekt/models/ingredient.dart';
+import 'package:QuickChef/models/recipe.dart';
+import 'package:QuickChef/models/ingredient.dart';
 
 class RecipeService {
   Future<List<Recipe>> getRecipesFromIngredients(List<Ingredient> ingredients) async {

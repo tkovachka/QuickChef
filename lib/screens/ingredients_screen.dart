@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:proekt/models/ingredient.dart';
-import 'package:proekt/screens/loading_screen.dart';
-import 'package:proekt/services/recipe_detection_service.dart';
-import 'package:proekt/ui/custom_button.dart';
-import 'package:proekt/ui/custom_text.dart';
-import 'package:proekt/ui/custom_colors.dart';
-import 'package:proekt/widgets/ingredient_card.dart';
-import 'package:proekt/widgets/new_ingredient_card.dart';
+import 'package:QuickChef/models/ingredient.dart';
+import 'package:QuickChef/screens/loading_screen.dart';
+import 'package:QuickChef/services/recipe_detection_service.dart';
+import 'package:QuickChef/ui/custom_button.dart';
+import 'package:QuickChef/ui/custom_text.dart';
+import 'package:QuickChef/ui/custom_colors.dart';
+import 'package:QuickChef/widgets/ingredient_card.dart';
+import 'package:QuickChef/widgets/new_ingredient_card.dart';
 
 class IngredientsScreen extends StatefulWidget {
   const IngredientsScreen({super.key});

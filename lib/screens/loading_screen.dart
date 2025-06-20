@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:proekt/ui/custom_colors.dart';
-import 'package:proekt/ui/custom_text.dart';
+import 'package:QuickChef/ui/custom_colors.dart';
+import 'package:QuickChef/ui/custom_text.dart';
 
 class LoadingScreen extends StatefulWidget {
   const LoadingScreen({super.key});

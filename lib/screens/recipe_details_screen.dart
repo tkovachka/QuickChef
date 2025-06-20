@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proekt/ui/custom_colors.dart';
-import 'package:proekt/ui/custom_text.dart';
+import 'package:QuickChef/ui/custom_colors.dart';
+import 'package:QuickChef/ui/custom_text.dart';
 import '../models/recipe.dart';
 
 class RecipeDetailsScreen extends StatelessWidget {

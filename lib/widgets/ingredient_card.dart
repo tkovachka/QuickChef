@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:proekt/models/ingredient.dart';
-import 'package:proekt/ui/custom_colors.dart';
-import 'package:proekt/ui/custom_text.dart';
+import 'package:QuickChef/models/ingredient.dart';
+import 'package:QuickChef/ui/custom_colors.dart';
+import 'package:QuickChef/ui/custom_text.dart';
 
 class IngredientCard extends StatelessWidget {
   final Ingredient ingredient;

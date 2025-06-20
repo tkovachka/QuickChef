@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proekt/screens/loading_screen.dart';
-import 'package:proekt/ui/custom_colors.dart';
+import 'package:QuickChef/screens/loading_screen.dart';
+import 'package:QuickChef/ui/custom_colors.dart';
 import 'screens/home_screen.dart';
 import 'screens/picture_screen.dart';
 import 'screens/ingredients_screen.dart';
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'QuickChef',
+      title: 'assets',
       debugShowCheckedModeBanner: false,
       initialRoute: '/home',
       theme: ThemeData(

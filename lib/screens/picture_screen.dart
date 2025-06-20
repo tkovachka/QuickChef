@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-import 'package:proekt/screens/loading_screen.dart';
-import 'package:proekt/services/ingredient_detection_service.dart';
-import 'package:proekt/ui/custom_colors.dart';
+import 'package:QuickChef/screens/loading_screen.dart';
+import 'package:QuickChef/services/ingredient_detection_service.dart';
+import 'package:QuickChef/ui/custom_colors.dart';
 
 class PictureScreen extends StatefulWidget {
   const PictureScreen({super.key});

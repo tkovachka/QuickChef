@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proekt/models/ingredient.dart';
-import 'package:proekt/ui/custom_colors.dart';
+import 'package:QuickChef/models/ingredient.dart';
+import 'package:QuickChef/ui/custom_colors.dart';
 
 class NewIngredientCard extends StatefulWidget {
   final void Function(Ingredient) onSubmit;
