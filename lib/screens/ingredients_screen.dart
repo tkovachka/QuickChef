@@ -6,6 +6,7 @@ import 'package:proekt/ui/custom_button.dart';
 import 'package:proekt/ui/custom_text.dart';
 import 'package:proekt/ui/custom_colors.dart';
 import 'package:proekt/widgets/ingredient_card.dart';
+import 'package:proekt/widgets/new_ingredient_card.dart';
 
 class IngredientsScreen extends StatefulWidget {
   const IngredientsScreen({super.key});
@@ -16,6 +17,7 @@ class IngredientsScreen extends StatefulWidget {
 
 class _IngredientsScreenState extends State<IngredientsScreen> {
   List<Ingredient> ingredients = [];
+  bool isAdding = false;
 
   @override
   void didChangeDependencies() {
@@ -39,6 +41,19 @@ class _IngredientsScreenState extends State<IngredientsScreen> {
     });
   }
 
+  void _addIngredient(Ingredient ingredient) {
+    setState(() {
+      ingredients.add(ingredient);
+      isAdding = false;
+    });
+  }
+
+  void _removeIngredient(Ingredient ingredient) {
+    setState(() {
+      ingredients.remove(ingredient);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,12 +73,16 @@ class _IngredientsScreenState extends State<IngredientsScreen> {
                 children: [
                   ...ingredients.map((item) => IngredientCard(
                         ingredient: item,
-                        onDelete: () {},
+                        onDelete: () => _removeIngredient(item),
                       )),
+                  if (isAdding)
+                    NewIngredientCard(
+                      onSubmit: _addIngredient,
+                      onCancel: () => setState(() => isAdding = false),
+                    ),
+                  if (!isAdding)
                   GestureDetector(
-                    onTap: () {
-                      //todo add new ingredient
-                    },
+                    onTap: () => setState(() => isAdding = true),
                     child: const NormalText(
                         text: "+ Add Ingredient",
                         color: CustomColor.darkOrange),
