@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proekt/screens/loading_screen.dart';
 import 'package:proekt/ui/custom_colors.dart';
 import 'screens/home_screen.dart';
 import 'screens/picture_screen.dart';
@@ -25,9 +26,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (_) => const HomeScreen(),
         '/picture': (_) => const PictureScreen(),
-        '/loading': (_) => const Placeholder(), // todo change this to loading screen
-        '/ingredients': (_) => IngredientsScreen(),
-        '/recipes': (_) => RecipesScreen(),
+        '/loading': (_) => const LoadingScreen(),
+        '/ingredients': (_) => const IngredientsScreen(),
+        '/recipes': (_) => const RecipesScreen(),
         '/recipe_details': (_) => const RecipeDetailsScreen(),
         '/favourites': (_) => const Placeholder(), // todo change to faves
         '/recent': (_) => const Placeholder(), // todo change to recent

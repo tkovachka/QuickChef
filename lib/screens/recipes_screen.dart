@@ -5,33 +5,16 @@ import 'package:proekt/widgets/recipe_card.dart';
 import 'package:proekt/models/recipe.dart';
 
 class RecipesScreen extends StatelessWidget {
-  //todo get recipes from ai service
-  final List<Recipe> recipes = [
-    Recipe(
-      id: '1',
-      title: 'Spaghetti',
-      imageUrl: 'https://via.placeholder.com/300',
-      timeToMake: 30,
-      ingredients: ['Tomato', 'Pasta'],
-      steps: ['Boil water', 'Cook pasta'],
-    ),
-    Recipe(
-      id: '2',
-      title: 'Salad',
-      imageUrl: 'https://via.placeholder.com/300',
-      timeToMake: 10,
-      ingredients: ['Lettuce', 'Tomato'],
-      steps: ['Mix ingredients'],
-    ),
-  ];
-
-  RecipesScreen({super.key});
+  const RecipesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)?.settings.arguments as Map?;
+    final recipes = (args?['recipes'] as List<Recipe>?) ?? [];
+
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: CustomColor.cream,
+        backgroundColor: CustomColor.white,
         elevation: 0,
         iconTheme: const IconThemeData(color: CustomColor.darkOrange),
       ),

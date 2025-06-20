@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:proekt/screens/loading_screen.dart';
+import 'package:proekt/services/ingredient_detection_service.dart';
 import 'package:proekt/ui/custom_colors.dart';
 
 class PictureScreen extends StatefulWidget {
@@ -49,7 +51,15 @@ class _PictureScreenState extends State<PictureScreen> {
     try {
       if (_controller != null && _controller!.value.isInitialized) {
         final image = await _controller!.takePicture();
-        Navigator.pushNamed(context, '/ingredients', arguments: image.path);
+        Navigator.pushNamed(context, '/loading',
+            arguments: {'messageGroup': 1});
+
+        final ingredients =
+            await IngredientDetectionService().detectIngredients(image.path);
+        if (!context.mounted) return;
+        Navigator.popAndPushNamed(context, '/ingredients', arguments: {
+          'ingredients': ingredients,
+        });
       }
     } catch (e) {
       debugPrint('Take picture error: $e');
