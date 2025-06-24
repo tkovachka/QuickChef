@@ -1,4 +1,4 @@
-package com.example.proekt
+package com.example.quickchef
 
 import io.flutter.embedding.android.FlutterActivity
 

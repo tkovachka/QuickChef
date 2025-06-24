@@ -12,7 +12,7 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
-  late List<String> messages;
+  List<String> messages = [];
   int currentIndex = 0;
   late Timer _timer;
 

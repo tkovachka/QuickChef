@@ -3,13 +3,17 @@ import 'package:QuickChef/screens/recent_recipes_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:QuickChef/screens/loading_screen.dart';
 import 'package:QuickChef/ui/custom_colors.dart';
-import 'screens/home_screen.dart';
-import 'screens/picture_screen.dart';
-import 'screens/ingredients_screen.dart';
-import 'screens/recipes_screen.dart';
-import 'screens/recipe_details_screen.dart';
+import 'package:QuickChef/screens/home_screen.dart';
+import 'package:QuickChef/screens/picture_screen.dart';
+import 'package:QuickChef/screens/ingredients_screen.dart';
+import 'package:QuickChef/screens/recipes_screen.dart';
+import 'package:QuickChef/screens/recipe_details_screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() => runApp(const MyApp());
+Future<void> main() async {
+  await dotenv.load();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
